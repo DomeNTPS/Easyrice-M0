@@ -14,16 +14,32 @@ const Login = () => {
       });
       console.log(history.location.state.dataSend)
     }
+    function handleClick() {
+      history.push({
+        pathname: "/Menu",
+        state: { dataSend: text },
+      });
+    }
+    function handleClick() {
+      history.push({
+        pathname: "/Setting",
+        state: { dataSend: text },
+      });
+    }
     function handleClickNumber() {
         setText(text + 1);
     }
 
     return (
       <div>
-        <h1>hi</h1>
-        <textarea></textarea>
         <button type="button" onClick={handleClick}>
-          sent
+          Menu
+        </button>
+        <button type="button" onClick={handleClick}>
+          Setting
+        </button>
+        <button type="button" onClick={handleClick}>
+          Inspect
         </button>
         <button onClick={handleClickNumber}>click</button>
         {text}

@@ -1,11 +1,11 @@
 import React from 'react'
+import { Link, useHistory, useParams, useLocation } from "react-router-dom";
 
 const RiceSetting = () => {
-    return (
-        <div>
-            
-        </div>
-    )
+    
+    let location = useLocation();
+
+    return <div>{location.state.dataSend}</div>;
 }
 
 export default RiceSetting
