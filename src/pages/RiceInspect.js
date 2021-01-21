@@ -1,13 +1,23 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useHistory, useParams, useLocation } from "react-router-dom";
 
-const RiceInspect = () => {
+const RiceInspect = (props) => {
+    // console.log(text)
+    let history = useHistory();
+    let params = useParams();
+    let location = useLocation();
+
+    // console.log(location.state)
+
     return (
-        <div>
-            ggggg
-            <Link to="/">home</Link>
-        </div>
-    )
+      <div>
+        <h1>{location.state.dataSend}</h1>
+        <br />
+        <button type="button" onClick={history.goBack}>
+          back
+        </button>
+      </div>
+    );
 }
 
 export default RiceInspect

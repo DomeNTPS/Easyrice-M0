@@ -1,12 +1,32 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
-import InspectPage from "./RiceInspect"
+import { Link, useHistory } from "react-router-dom";
 
 const Login = () => {
+
+    let history = useHistory();
+
+    const [text,setText] = React.useState(Number)
+
+    function handleClick() {
+      history.push({
+        pathname: "/InspectPage",
+        state: { dataSend: text },
+      });
+      console.log(history.location.state.dataSend)
+    }
+    function handleClickNumber() {
+        setText(text + 1);
+    }
+
     return (
       <div>
         <h1>hi</h1>
-        <Link to="/InspectPage">ตรวจข้าว</Link>
+        <textarea></textarea>
+        <button type="button" onClick={handleClick}>
+          sent
+        </button>
+        <button onClick={handleClickNumber}>click</button>
+        {text}
       </div>
     );
 }
